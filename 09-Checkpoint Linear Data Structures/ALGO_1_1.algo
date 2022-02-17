@@ -1,0 +1,28 @@
+ALGORITHM ALGO_1_1
+VAR
+    set1, set2, res: ARRAY;
+    k, sum : INTEGER;
+
+    
+BEGIN
+    k:=0;
+    sum:=0;
+    res:=[];
+    READ (set1);
+    READ (set2);
+    l1:=length(set1);
+    l2:=length(set2);
+    FOR i from 0 to l1-1 STEP DO
+        FOR j from 0 to l2-1  STEP DO
+            IF (set1[i] <> set2[j]) THEN
+                sum = sum + set1[i];
+                res[k] = set1[i];
+                k=k+1;
+            END_IF
+
+        END_FOR
+    END_FOR
+
+    WRITE ('Number of Occuration is :', sum);
+    WRITE ('Elements of Occuration are :', res);
+END
