@@ -1,0 +1,22 @@
+ALGORITHM ALGO_1
+VAR
+    sentence : STRING;
+    n_w, n_c, n_v, l : INTEGER;
+BEGIN
+    READ (sentence);
+    n_w :=1;
+    n_c :=0;
+    n_v :=0;
+    l:= sentence.length;
+    
+    FOR i FROM 0 TO l-1 DO
+        SWITCH (sentence[i]) DO
+            sentence[i] in ["a","e","o","u","y","i"] : n_c:=n_c+1; n_v:=n_v+1;
+                BREAK: 
+            sentence[i] := " " : n_w:=n_w+1; n_c:=n_c+1;
+                BREAK:
+            sentence[i] := "." : n_c:=n_c+1;
+                BREAK:
+            default : n_c:=n_c+1;
+        END_SWITCH
+END
